@@ -1,7 +1,7 @@
 import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
 
-const httpLik = createUploadLink({
-  uri: 'https://localhost:4000/',
+const httpLik = createHttpLink({
+  uri: 'http://localhost:4000/',
 });
 
 const client = new ApolloClient({

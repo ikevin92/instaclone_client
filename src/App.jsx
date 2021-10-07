@@ -1,15 +1,26 @@
+import { useState } from 'react';
 import { ApolloProvider } from '@apollo/client';
-import { Button } from 'semantic-ui-react';
+import { ToastContainer } from 'react-toastify';
 import client from './config/apollo';
+import Auth from './pages/Auth/Auth';
 
 const App = () => {
+  const [auth, setAuth] = useState(undefined);
+
   return (
     <ApolloProvider client={client}>
-      <div>
-        <h1>instaclone</h1>
-        <Button primary>Primary</Button>
-        <Button secondary>Secondary</Button>
-      </div>
+      {!auth ? <Auth /> : <h1>Estas Logueado</h1>}
+      <ToastContainer
+        position='top-right'
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </ApolloProvider>
   );
 };
