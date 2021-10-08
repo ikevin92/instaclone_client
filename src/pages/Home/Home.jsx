@@ -1,8 +1,6 @@
-import useAuth from '../../hooks/useAuth';
+import './Home.scss';
 
 const Home = () => {
-  const auth = useAuth();
-  console.log(auth);
   return (
     <div>
       <h1>Home</h1>
