@@ -1,11 +1,16 @@
-
+import React, { useEffect } from 'react';
+import { size } from 'lodash';
+import { useQuery } from '@apollo/client';
+import { useParams } from 'react-router-dom';
+import Profile from './../components/Profile/Profile';
 
 const User = () => {
+  const { username } = useParams();
   return (
-    <div>
-      <h1>User...</h1>
-    </div>
-  )
-}
+    <>
+      <Profile username={username}/>
+    </>
+  );
+};
 
-export default User
+export default User;
